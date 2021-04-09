@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+#po-water {
+  --black: #222;
+  --grey: #cccccc;
+}
+
+#po-water {
+  width: 530px;
+  height: auto;
+  margin: 15px auto;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: var(--black);
+  font-weight: 400;
+  font-family: "Inter";
+  line-height: 1.3;
+  position: relative;
+  text-align: right;
+}
+
+#po-water ::-webkit-scrollbar {
+  display: none;
+}
+
+#po-water div {
+  box-sizing: border-box;
+  text-align: left;
+}
+
+#po-water:before {
+  content: "";
+  background: var(--accent);
+  width: 100%;
+  height: 181px;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.po-navi {
+  width: auto;
+  display: inline-block;
+  z-index: 2;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9em;
+  border-bottom: 1px solid var(--black);
+  margin-bottom: 15px;
+}
+
+.po-biginfo {
+  width: 100%;
+  height: 552px;
+  border: 1px solid var(--black);
+  position: relative;
+}
+
+.po-biginfo .po-normal, .po-mafia, .po-hp {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+}
+
+.po-top {
+  width: 100%;
+  height: 250px;
+  padding: 10px;
+  border-bottom: 1px dashed var(--black);
+  display: grid;
+  grid-template-columns: 35% auto;
+  grid-template-rows: 20% auto;
+  gap: 10px;
+}
+
+.po-face {
+  width: 100%;
+  height: 100%;
+  grid-row: 1 / 3;
+  position: relative;
+  overflow: hidden;
+}
+
+.po-face:hover .po-physical {
+  opacity: 1;
+}
+
+.po-face:hover img {
+  transform: scale(1.1);
+}
+
+.po-physical {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: .5s ease-in-out;
+  color: white;
+  text-align: center !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#po-water pp {
+  display: inline;
+  color: var(--accent);
+  text-transform: uppercase;
+  font-size: .9em;
+  font-weight: 700;
+}
+
+.po-face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .5s ease-in-out;
+}
+
+.po-name {
+  width: 100%;
+  font-family: "Libre Baskerville";
+  font-size: 3em;
+  font-style: italic;
+  letter-spacing: -.09em;
+}
+
+.po-name span {
+  border-bottom: 1px solid white;
+}
+
+.po-card {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 5px;
+  align-items: center;
+}
+
+.po-card span {
+  font-family: "Libre Baskerville";
+  text-transform: uppercase;
+  font-style: italic;
+  display: block;
+  letter-spacing: -.1em;
+  font-size: 0.9em;
+}
+
+.po-card span:after {
+  content: "―";
+}
+
+.po-bottom {
+  width: 100%;
+  height: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 10% 1fr 20%;
+}
+
+.po-bottom>div {
+  width: 100%;
+  height: 100%;
+}
+
+#po-water tt {
+  font-family: "VT323";
+  color: var(--accent);
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#po-water tt:before {
+  content: '>';
+}
+
+.po-personality {
+  grid-column: 1 / 3;
+  border-bottom: 1px solid var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: .7em;
+  text-align: center !important;
+  line-height: 1em;
+}
+
+.po-links {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  border-left: 1px dashed var(--black);
+  padding: 10px;
+  overflow: auto;
+}
+
+#po-water ll {
+  color: var(--accent);
+  font-family: "Libre Baskerville";
+  font-weight: bold;
+  letter-spacing: -.1em;
+}
+
+#po-water h6 {
+  margin: auto;
+  font-size: 1.1em;
+  font-family: "Libre Baskerville";
+  font-style: italic;
+  font-weight: bold;
+  border-bottom: 1px solid white;
+  width: auto;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.po-facts {
+  grid-row: 2 / 4;
+  border-right: 1px solid var(--grey);
+  padding: 10px;
+  overflow: auto;
+}
+
+.po-story {
+  grid-row: 2 / 4;
+  padding: 10px;
+  overflow: auto;
+}
+
+.po-barcode {
+  font-family: "Libre Barcode 39 Text";
+  font-size: 1.7em;
+  border-left: 1px dashed var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
