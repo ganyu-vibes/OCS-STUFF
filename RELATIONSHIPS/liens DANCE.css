@@ -1,0 +1,178 @@
+:root {
+  --c1: #858EBE;
+  /* couleur foncée */
+  --c2: #f860a0;
+  /* couleur claire */
+  --c3: #bec1d9;
+  --c4: #f4b3de;
+  --f1: 'Playfair Display';
+  --f2: 'Open Sans';
+  --gradient3: linear-gradient(90deg, var(--c3), var(--c4));
+  --gradient4: linear-gradient(90deg, var(--c4), var(--c3));
+  --gradient5: linear-gradient(180deg, var(--c3), var(--c4));
+  --gradient6: linear-gradient(180deg, var(--c4), var(--c3));
+  --gradient7: linear-gradient(45deg, var(--c4), var(--c3));
+}
+
+/* LA BASE & GENERAL */
+#dance {
+  width: 500px;
+  background: whitesmoke;
+  font-family: var(--f2);
+  font-size: 11px;
+  color: black;
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid gainsboro;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+#dance div {
+  box-sizing: border-box;
+}
+
+/* SCROLLBARS */
+#dance ::-webkit-scrollbar {
+  width: 3px !important;
+}
+
+#dance ::-webkit-scrollbar-thumb {
+  background: var(--gradient5) !important;
+}
+
+#dance ::-webkit-scrollbar-track {
+  background: none !important;
+}
+
+/* EFFETS DE TEXTE */
+#dance a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 0 3px;
+  background-size: 100% 35%;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-image: var(--gradient4);
+  transition: background 0.3s;
+}
+
+#dance a:hover {
+  background-size: 100% 100%;
+}
+
+#dance b {
+  color: var(--c4);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+}
+
+#dance i {
+  color: #888;
+}
+
+#dance u {
+  color: var(--c3);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+}
+
+#dance z {
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: -1px;
+  font-family: var(--f1);
+  text-decoration: underline dashed var(--c1);
+}
+
+/* HEADER */
+#dance #header {
+  background: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid gainsboro;
+}
+
+#dance #header .title {
+  font-family: var(--f1);
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  background: var(--gradient3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#dance #header .title:before {
+  content: '*+:｡.｡';
+  font-size: 17px;
+}
+
+#dance #header .title:after {
+  content: '｡.｡:+*';
+  font-size: 17px;
+  margin-left: 5px;
+}
+
+#dance #header .sub {
+  text-transform: uppercase;
+  font-size: 9px;
+  font-weight: 700;
+  margin-top: -5px;
+}
+
+/* UN LIEN */
+#dance #lien {
+  width: 45%;
+  padding: 10px 0;
+}
+
+#dance #lien .icon {
+  background: var(--gradient6);
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+}
+
+#dance #lien .icon img {
+  width: 35%;
+  border-radius: 100px;
+  padding: 6px;
+  border: 1px dashed white;
+}
+
+#dance #lien .desc {
+  background: white;
+  width: 100%;
+  height: 100px;
+  border-top: 1px solid var(--c4);
+  border-left: 1px solid gainsboro;
+  border-right: 1px solid gainsboro;
+  border-bottom: 1px solid var(--c3);
+  padding: 6px;
+  overflow: auto;
+  text-align: justify;
+}
+
+#dance #lien .name {
+  width: 100%;
+  background: black;
+  color: white;
+  border-left: 1px solid gainsboro;
+  border-right: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+  padding: 4px 6px;
+  font-family: var(--f1);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+#dance #lien .name:before {
+  content: '♡ ';
+  margin-right: 4px;
+  background: var(--gradient5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

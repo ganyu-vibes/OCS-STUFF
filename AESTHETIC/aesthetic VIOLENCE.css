@@ -1,0 +1,668 @@
+/* VARIABLES & FONTS */
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400&display=swap");
+
+:root {
+  --accent: crimson;
+}
+
+/* MAIN */
+#space {
+  width: 500px;
+  height: 450px;
+  position: relative;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid var(--accent);
+  font-family: 'Arial';
+  text-align: justify;
+  color: white;
+  font-size: 12px;
+  line-height: 13px;
+}
+
+#space .home {
+  width: 500px;
+  height: 450px;
+  background-size: cover;
+  z-index: 0;
+  filter: grayscale(1);
+}
+
+#space scr {
+  display: block;
+  width: 500px;
+  height: 450px;
+  background: var(--accent);
+  margin-top: -450px;
+  mix-blend-mode: multiply;
+}
+
+#space .pages .qute {
+  background: none;
+  position: absolute;
+  top: 10px;
+  width: 500px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0 90px;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 25px;
+  font-family: 'Times';
+  line-height: 13px;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+}
+#space .pages .qute:before {
+  content: '❝';
+  margin-right: 5px;
+}
+#space .pages .qute:after {
+  content: '❞';
+}
+#space .pages .qute:before, #space .pages .qute:after {
+  color: #F28097;
+}
+
+/* TABS SYSTEM */
+#space .pages .chapters {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  color: white;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+  z-index: 99;
+}
+
+#space input {
+  display: none;
+}
+
+#space label {
+  position: relative;
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 3px;
+  margin-right: 5px;
+}
+
+#space label:hover {
+  cursor: crosshair;
+}
+
+#space input:checked + label {
+  color: #F28097;
+  font-style: italic;
+}
+
+#space .tabs {
+  width: 470px;
+  height: 400px;
+  position: absolute;
+  top: 25px;
+  overflow: hidden;
+}
+
+#space .tabs .content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 10px;
+  transition: opacity 0.7s ease-in-out;
+  border: 1px solid white;
+  background: rgba(255, 255, 255, 0.6);
+  box-sizing: border-box;
+  opacity: 0;
+}
+
+#space .pages #li1:checked + label ~ .tabs .content:nth-child(1) {
+  opacity: 1;
+  z-index: 99;
+}
+
+#space .pages #li2:checked + label ~ .tabs .content:nth-child(2) {
+  opacity: 1;
+  z-index: 99;
+}
+
+#space .pages #li3:checked + label ~ .tabs .content:nth-child(3) {
+  opacity: 1;
+  z-index: 99;
+}
+
+#space:hover .chapters {
+  opacity: 1;
+}
+
+#space:hover .qute {
+  opacity: 0;
+}
+
+/* FIRST TAB */
+#space .pages .tabs #special {
+  box-sizing: border-box;
+  border: none;
+  padding: 4px;
+  background: none;
+  width: 100%;
+  height: auto;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -4px;
+  font-size: 60px;
+  text-align: right;
+  line-height: 43px;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+}
+
+#space .pages #special o {
+  color: white;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+}
+
+/* ABOUT HIM */
+#space .pages #infos {
+  transition: ease-in-out 0.7s;
+  border: 1px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+}
+
+#space #infos img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  object-fit: cover;
+  border: 4px double white;
+}
+
+#space #infos #quote {
+  color: white;
+  width: 480px;
+  box-sizing: border-box;
+  padding: 0 30px;
+  text-align: center;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 20px;
+  font-family: 'Times';
+  line-height: 13px;
+}
+#space #infos #quote:before {
+  content: '❝';
+  margin-right: 10px;
+}
+#space #infos #quote:after {
+  content: '❞';
+  margin-left: 5px;
+}
+#space #infos #quote:before, #space #infos #quote:after {
+  color: var(--accent);
+}
+
+#space #infos #cadre {
+  width: 200px;
+  height: 180px;
+  box-sizing: border-box;
+  padding: 5px;
+  text-align: justify;
+  color: white;
+  font-size: 12px;
+  overflow: auto;
+  line-height: 13px;
+}
+
+#space #infos .chrono {
+  margin-left: 10px;
+}
+
+/* SOCIAL */
+#space #social {
+  overflow: auto;
+  text-align: center;
+}
+
+#space #social .insta, #space #social .twitter, #space #social .google {
+  background: white;
+  color: white;
+  margin: 10px auto;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: justify;
+  border: 1px solid #F28097;
+}
+
+/* INSTAGRAM */
+#space #social .insta {
+  width: 60%;
+}
+
+#space #social .insta .pdp {
+  width: 27px;
+  height: 27px;
+  object-fit: cover;
+  border-radius: 100px;
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+#space #social .insta .post {
+  width: 100%;
+}
+
+#space #social .insta jem {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+#space #social .insta jem:before {
+  content: '\ea54';
+  font-family: 'honeybee';
+  color: var(--accent);
+  margin-right: 4px;
+}
+#space #social .insta jem:after {
+  content: '\ebce';
+  font-family: 'honeybee';
+}
+
+/* TWITTER */
+#space #social .twitter {
+  width: 80%;
+}
+
+#space #social .twitter .pdp {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  float: left;
+  border-radius: 100px;
+  margin-right: 10px;
+}
+
+#space #social .twitter twi {
+  font-size: 14px;
+  color: black;
+}
+
+#space #social .twitter time {
+  color: grey;
+  font-size: 11px;
+}
+
+/* SNAPCHAT */
+#space #social .snapchat {
+  width: 60%;
+  margin: 10px auto;
+  height: 380px;
+  border-radius: 4px;
+  background-size: cover;
+  background-position: center;
+  padding: 0 !important;
+  text-align: left;
+  border: 1px solid white;
+}
+
+#space #social .snapchat pseudo {
+  display: block;
+  padding: 7px;
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 grey;
+}
+
+#space #social .snapchat .caption {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  letter-spacing: 0.3px;
+  text-align: center;
+  padding: 4px;
+  position: absolute;
+}
+
+/* PHONE & SMS */
+#space #social .phone {
+  width: 50%;
+  margin: 10px auto;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  font-family: 'Roboto';
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: black;
+  background: white;
+  line-height: 1.15;
+}
+
+#space #social .phone o {
+  background: whitesmoke;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  margin: 8px 10px 8px 0;
+}
+
+#space #social .phone m {
+  background: whitesmoke;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 90px;
+  height: 5px;
+  border-radius: 5px;
+  margin: 8px 0;
+}
+
+#space #social .phone .top {
+  width: 95%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 10px;
+  padding: 3px 5px;
+  box-sizing: border-box;
+}
+
+#space #social .phone .top left {
+  float: left;
+}
+#space #social .phone .top left:after {
+  content: '\ebae';
+  font-family: 'Honeybee';
+  margin-left: 3px;
+  font-size: 9px;
+}
+
+#space #social .phone .top left .network {
+  font-size: 11px;
+  letter-spacing: -1.5px;
+}
+
+#space #social .phone .top right {
+  float: right;
+}
+#space #social .phone .top right:before {
+  content: '\e90d';
+  font-family: 'Honeybee';
+  margin-right: 3px;
+  opacity: 0.6;
+}
+#space #social .phone .top right:after {
+  content: '\e92a';
+  font-family: 'Honeybee';
+}
+
+#space #social .phone .lockscreen {
+  width: 95%;
+  height: 320px;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+#space #social .phone .front {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0);
+  text-shadow: 1px 1px 0px grey;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 1;
+  transition: ease 1s;
+}
+
+#space #social .phone .front h {
+  display: block;
+  width: 100%;
+  font-weight: 100;
+  font-size: 50px;
+  position: absolute;
+  top: 20px;
+}
+
+#space #social .phone .front d {
+  display: block;
+  width: 100%;
+  font-size: 10px;
+  font-weight: 300;
+  position: absolute;
+  top: 75px;
+}
+
+#space #social .phone .front sl {
+  display: block;
+  position: absolute;
+  bottom: 40px;
+  font-size: 14px;
+  font-weight: 300;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  border-radius: 50px;
+}
+#space #social .phone .front sl:before {
+  content: '\ebc6';
+  font-family: 'Honeybee';
+  font-size: 13px;
+  margin-right: 4px;
+}
+#space #social .phone .front sl:after {
+  content: 'slide to unlock';
+}
+
+#space #social .phone .back {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  transition: opacity ease 1s;
+}
+
+#space #social .phone .back n {
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 0px grey;
+}
+#space #social .phone .back n:before {
+  content: 'new messages!';
+}
+
+#space #social .phone .back img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 100px;
+  border: 8px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 0px 0px 2px white;
+  margin: 20px 0 5px 0;
+}
+
+#space #social .phone .back name {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 300;
+  text-shadow: 1px 1px 0px grey;
+}
+
+#space #social .phone .back .allsms {
+  width: 85%;
+  margin: 7px 0 0 0;
+  overflow: auto;
+  max-height: 40%;
+}
+
+#space #social .phone .back sms {
+  width: 100%;
+  display: block;
+  background: white;
+  color: black;
+  font-size: 10px;
+  box-sizing: border-box;
+  padding: 6px;
+  border-radius: 6px;
+  text-align: justify;
+  line-height: 11px;
+  margin: 4px 0;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+#space #social .phone .lockscreen:hover .front {
+  position: absolute;
+  left: 100%;
+}
+
+#space #social .phone .lockscreen:hover .back {
+  opacity: 1;
+}
+
+#space #social .phone #button {
+  background: whitesmoke;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+/* GOOGLE */
+#space #social .google {
+  width: 80%;
+  border-radius: 6px;
+}
+
+#space #social .google .fas {
+  color: dimgrey;
+  font-size: 15px;
+}
+
+/* DIVIDERS */
+#space bar1 {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: white;
+}
+
+#space bar2 {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: gainsboro;
+  margin: 10px 0;
+}
+
+#space bar3 {
+  display: block;
+  width: 100%;
+  border-top: 3px double rgba(255, 255, 255, 0.8);
+  margin-bottom: 15px;
+}
+
+/* SPECIAL TEXTS */
+#space b {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+#space x {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--accent);
+  padding: 0 4px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8);
+}
+
+#space i {
+  color: gainsboro;
+  font-family: 'Times';
+  font-size: 14px;
+}
+
+#space u {
+  text-decoration: underline var(--accent);
+}
+
+#space y {
+  color: var(--accent);
+  font-family: 'Times';
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+  transition: 0.5s ease-in-out;
+  cursor: default;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4);
+  text-decoration: underline dotted white;
+}
+#space y:hover {
+  letter-spacing: 2px;
+}
+
+#space z {
+  font-weight: bold;
+  color: black;
+}
+
+#space w {
+  color: #F28097;
+  cursor: pointer;
+}
+#space w:hover {
+  text-decoration: underline;
+}
+
+/* SCROLLBAR ABOUT HIM */
+#space #infos ::-webkit-scrollbar {
+  width: 6px;
+}
+
+#space #infos ::-webkit-scrollbar-thumb {
+  border: 1px solid white;
+}
+
+#space #infos ::-webkit-scrollbar-track {
+  border: 1px solid white;
+}
+
+/* SCROLLBAR SOCIAL */
+#space #social::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+#space #social::-webkit-scrollbar-thumb {
+  background: white;
+  border: 2px inset white;
+  border-radius: 50px;
+}

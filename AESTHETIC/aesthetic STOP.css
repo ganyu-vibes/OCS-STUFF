@@ -1,0 +1,971 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap');
+
+:root {
+  --accent1: #60a0dd;
+  --accent2: #9778ac;
+  --font1: 'Playfair Display';
+}
+
+/* TITRE DE L'ONGLET */
+#pea {
+  width: 500px;
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 7px 0;
+  box-sizing: content-box;
+  border-radius: 6px 6px 0 0;
+  font-family: 'Roboto';
+  color: #1F1F1F;
+  font-size: 9px;
+  text-transform: uppercase;
+  font-weight: 900;
+  border-left: 1px solid rgba(0, 0, 0, 0.4);
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+#pea one, #pea two, #pea thr {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  margin: 0 3px;
+}
+
+#pea one {
+  background: var(--accent1);
+  margin-left: 10px;
+}
+
+#pea two {
+  background: var(--accent2);
+}
+
+#pea thr {
+  background: silver;
+  margin-right: 8px;
+}
+
+#pea fou {
+  position: absolute;
+  right: 8px;
+}
+
+#pea fou:before {
+  content: '\ec8e';
+  font-family: 'honeybee';
+  color: #1F1F1F;
+  font-size: 7px;
+}
+
+/* STRUCTURE PRINCIPALE */
+#stop {
+  width: 500px;
+  height: 600px;
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-family: 'Roboto';
+  color: #1F1F1F;
+  font-size: 10px;
+  line-height: 11px;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+#stop div {
+  box-sizing: border-box;
+}
+
+/* TWO = SIDEBAR */
+#stop #two {
+  order: 1;
+  width: 30%;
+  height: 95%;
+  position: relative;
+  background: linear-gradient(45deg, var(--accent1), var(--accent2));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+#stop #two img {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  border: 9px solid white;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+  object-position: center;
+}
+
+#stop #two .title {
+  width: 75%;
+  font-family: var(--font1);
+  color: white;
+  letter-spacing: -2px;
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 17px;
+  margin: 20px 0;
+}
+
+#stop #two .quote {
+  width: 75%;
+  font-style: italic;
+  max-height: 40%;
+  color: white;
+  overflow: auto;
+  line-height: 23px;
+  letter-spacing: 2px;
+  text-align: justify;
+  font-size: 11px;
+}
+
+#stop #two .quote::-webkit-scrollbar {
+  display: none;
+}
+
+#stop #two .icon {
+  color: white;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+/* SYSTEME DE TABS */
+#stop input {
+  display: none;
+}
+
+#stop label {
+  order: 2;
+  width: calc(25 * 150px / 100);
+  height: 5%;
+  background: white;
+  color: #1f1f1f;
+  position: absolute;
+  bottom: 0;
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#stop label:hover {
+  background: white;
+  color: #1f1f1f;
+  cursor: crosshair;
+}
+
+#stop label[for=home] {
+  right: calc(3 * 25 * 150px / 100);
+}
+
+#stop label[for=home]:before {
+  content: '\ea62';
+  font-family: 'honeybee';
+}
+
+#stop label[for=insta] {
+  right: calc(2 * 25 * 150px / 100);
+  border-left: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+#stop label[for=insta]:before {
+  content: '\ebe5';
+  font-family: 'honeybee';
+}
+
+#stop label[for=twit] {
+  right: calc(25 * 150px / 100);
+  border-left: 1px solid rgba(0, 0, 0, 0.4);
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+#stop label[for=twit]:before {
+  content: '\ec1b';
+  font-family: 'honeybee';
+}
+
+#stop label[for=spot] {
+  right: 0;
+  border-radius: 0 0 6px 0;
+}
+
+#stop label[for=spot]:before {
+  content: '\ecaf';
+  font-family: 'honeybee';
+}
+
+/* ONE = CONTENT */
+#stop #one {
+  order: 0;
+  width: 70%;
+  height: 100%;
+  border-radius: 0 0 0 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* fond de ONE */
+#stop #one .overlay {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(1) brightness(0.5) contrast(1.1);
+  z-index: 0;
+  overflow: hidden;
+}
+
+#stop #one .content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 1s ease-in-out;
+}
+
+/* HOME */
+#stop #one #maison {}
+
+#stop #one #maison .qu {
+  position: absolute;
+  color: white;
+  font-family: var(--font1);
+  max-width: 180px;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 3px;
+  line-height: 12px;
+  font-weight: 700;
+}
+
+/* INSTAGRAM */
+#stop #one #instagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#stop #one #instagram .pageig {
+  width: 75%;
+  background: white;
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+#stop #one #instagram .pageig .entete {
+  width: 100%;
+  font-size: 10px;
+}
+
+#stop #one #instagram .pageig .entete .pdp {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 100px;
+  margin-right: 10px;
+  float: left;
+}
+
+#stop #one #instagram .pageig .entete pseudo {
+  font-weight: 300;
+  font-size: 15px;
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+#stop #one #instagram .pageig .entete .th-check-mark {
+  color: white;
+  background: var(--accent1);
+  font-size: 5px;
+  border-radius: 100%;
+  padding: 3px;
+  margin-right: 7px;
+}
+
+#stop #one #instagram .pageig .entete follow {
+  display: inline-block;
+  background: var(--accent2);
+  color: white;
+  text-transform: uppercase;
+  font-size: 7px;
+  padding: 2px 5px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#stop #one #instagram .pageig .entete follow:before {
+  content: 'following';
+}
+
+#stop #one #instagram .pageig .entete .chiffres {
+  font-weight: 300;
+  margin: 4px 0;
+}
+
+#stop #one #instagram .pageig .entete ii {
+  font-weight: 500;
+}
+
+#stop #one #instagram .pageig .entete .descri {
+  font-weight: 300;
+}
+
+#stop #one #instagram .pageig .gallerie {
+  width: 100%;
+  margin-top: 15px;
+  text-align: center;
+}
+
+#stop #one #instagram .pageig .gallerie .photo {
+  display: inline-block;
+  position: relative;
+  width: 77px;
+  height: 77px;
+  background-size: cover;
+}
+
+#stop #one #instagram .pageig .gallerie .photo .overlay {
+  position: absolute;
+  width: 77px;
+  height: 77px;
+  color: white;
+  font-size: 18px;
+  filter: brightness(1.5) !important;
+  top: 0;
+  opacity: 0;
+  transition: .7s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#stop #one #instagram .pageig .gallerie .photo .overlay:before {
+  content: '\ea54';
+  font-family: 'honeybee';
+}
+
+#stop #one #instagram .pageig .gallerie .photo:hover .overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* TWITTER */
+#stop #one #twitter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#stop #one #twitter .pagetwit {
+  width: 75%;
+  background: white;
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+#stop #one #twitter .pagetwit .head {
+  width: 100%;
+  border-bottom: 1px solid gainsboro;
+  padding-bottom: 6px;
+}
+
+#stop #one #twitter .pagetwit .head:before {
+  content: '\ebc1';
+  font-family: 'honeybee';
+  color: var(--accent2);
+  float: left;
+  font-size: 17px;
+  margin-right: 15px;
+  margin-top: 5px;
+  margin-left: 7px;
+}
+
+#stop #one #twitter .pagetwit name {
+  display: block;
+  width: 100%;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+#stop #one #twitter .pagetwit .images {
+  width: 100%;
+  position: relative;
+}
+
+#stop #one #twitter .pagetwit .images .bann {
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+}
+
+#stop #one #twitter .pagetwit .images .avatar {
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  border-radius: 100px;
+  border: 3px solid white;
+  position: absolute;
+  bottom: -43px;
+  left: 5px;
+}
+
+#stop #one #twitter .pagetwit .images .buttons {
+  float: right;
+  margin-top: 15px;
+}
+
+#stop #one #twitter .pagetwit .images .buttons:before, #stop #one #twitter .pagetwit .images .buttons:after {
+  font-family: 'honeybee';
+  color: var(--accent1);
+  border-radius: 100%;
+  border: 1px solid var(--accent1);
+  padding: 5px;
+  font-size: 15px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+#stop #one #twitter .pagetwit .images .buttons:before {
+  content: '\ebdb';
+}
+
+#stop #one #twitter .pagetwit .images .buttons:after {
+  content: '\e910';
+}
+
+#stop #one #twitter .pagetwit .images follow {
+  display: block;
+  background: var(--accent2);
+  color: white;
+  font-size: 12px;
+  padding: 8px 7px;
+  border-radius: 15px;
+  font-weight: 700;
+  float: right;
+  cursor: pointer;
+  margin-top: 6px;
+  margin-right: 5px;
+}
+
+#stop #one #twitter .pagetwit .images follow:before {
+  content: 'Following';
+}
+
+#stop #one #twitter .pagetwit .profil {
+  margin-top: 45px;
+  width: 100%;
+  padding-bottom: 7px;
+}
+
+#stop #one #twitter .pagetwit pseudo {
+  display: inline-block;
+  color: #868686;
+}
+
+#stop #one #twitter .pagetwit .profil descrip {
+  display: block;
+  width: 100%;
+  text-align: justify;
+  margin: 5px 0;
+}
+
+#stop #one #twitter .pagetwit tag {
+  color: var(--accent1);
+}
+
+#stop #one #twitter .pagetwit tag:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#stop #one #twitter .pagetwit .profil .more {
+  width: 100%;
+  margin-top: 5px;
+  color: #868686;
+  text-align: justify;
+}
+
+#stop #one #twitter .pagetwit .profil .more alink, posi, calen {
+  margin-right: 5px;
+}
+
+#stop #one #twitter .pagetwit .profil .more alink:before, posi:before, calen:before {
+  font-family: 'honeybee';
+  margin-right: 3px;
+}
+
+#stop #one #twitter .pagetwit .profil .more alink:before {
+  content: '\ea96';
+}
+
+#stop #one #twitter .pagetwit .profil .more posi:before {
+  content: '\eb1b';
+}
+
+#stop #one #twitter .pagetwit .profil .more calen:before {
+  content: '\e983';
+}
+
+#stop #one #twitter .pagetwit .profil .numbers {
+  margin-top: 5px;
+  color: #868686;
+}
+
+#stop #one #twitter .pagetwit .profil .numbers jj {
+  font-weight: 900;
+  color: #1F1F1F;
+}
+
+#stop #one #twitter .pagetwit .tweet {
+  width: 100%;
+  border-top: 1px solid gainsboro;
+  padding: 7px 0;
+}
+
+#stop #one #twitter .pagetwit .tweet .avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-size: cover;
+  float: left;
+  margin-right: 7px;
+}
+
+#stop #one #twitter .pagetwit .tweet na {
+  font-weight: 900;
+}
+
+#stop #one #twitter .pagetwit .tweet na:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#stop #one #twitter .pagetwit .tweet .txttt {
+  width: calc(100% - 37px);
+  text-align: justify;
+  margin-left: 37px;
+}
+
+#stop #one #twitter .pagetwit .tweet .rtfav {
+  width: 100%;
+  font-family: 'honeybee';
+  font-size: 12px;
+  color: #868686;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+#stop #one #twitter .pagetwit .tweet .rtfav cc:before, rr:before, ff:before, ss:before {
+  cursor: pointer;
+}
+
+#stop #one #twitter .pagetwit .tweet .rtfav cc:before {
+  content: '\ebce';
+}
+
+#stop #one #twitter .pagetwit .tweet .rtfav rr:before {
+  content: '\ebc2';
+}
+
+#stop #one #twitter .pagetwit .tweet .rtfav ff:before {
+  content: '\ea55';
+}
+
+#stop #one #twitter .pagetwit .tweet .rtfav ss:before {
+  content: '\eb9a';
+}
+
+/* SPOTIFY */
+#stop #one #spotify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#stop #one #spotify .pagespot {
+  width: 75%;
+  background: white;
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+#stop #one #spotify .pagespot .pochette {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#stop #one #spotify .pagespot .pochette pl {
+  display: inline-block;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+#stop #one #spotify .pagespot .pochette pl:before {
+  content: 'playlist';
+}
+
+#stop #one #spotify .pagespot .pochette img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.15);
+  margin: 7px 0 17px 0;
+}
+
+#stop #one #spotify .pagespot .pochette titl {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 23px;
+  line-height: 18px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  padding: 0 15px;
+}
+
+#stop #one #spotify .pagespot .pochette det {
+  display: inline-block;
+  color: #5d5d5d;
+  margin-top: 3px;
+}
+
+#stop #one #spotify .pagespot .pochette det z {
+  color: var(--accent1);
+}
+
+#stop #one #spotify .pagespot .pochette det z:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#stop #one #spotify .pagespot .alea {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  border-radius: 15px;
+  padding: 6px 10px;
+  margin: auto;
+  color: white;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+#stop #one #spotify .pagespot .alea:before {
+  content: 'lecture aléatoire';
+}
+
+#stop #one #spotify .pagespot .alea:hover {
+  cursor: pointer;
+  background: linear-gradient(-90deg, var(--accent1), var(--accent2));
+}
+
+#stop #one #spotify .pagespot .spoheader {
+  width: 100%;
+  color: #5D5D5D;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border-bottom: 1px solid gainsboro;
+  padding: 4px 0;
+  font-size: 9px;
+  text-align: left;
+  margin-top: 10px;
+}
+
+#stop #one #spotify .pagespot .spoheader o {
+  display: inline-block;
+  width: 50%;
+}
+
+#stop #one #spotify .pagespot .spoheader o:before {
+  content: 'titre';
+}
+
+#stop #one #spotify .pagespot .spoheader t {
+  display: inline-block;
+  width: 37%;
+}
+
+#stop #one #spotify .pagespot .spoheader t:before {
+  content: 'artiste';
+}
+
+#stop #one #spotify .pagespot .spoheader h {
+  display: inline-block;
+  width: 13%;
+}
+
+#stop #one #spotify .pagespot .spoheader h:before {
+  content: '\e9ab';
+  font-family: 'honeybee';
+}
+
+#stop #one #spotify .pagespot .song {
+  width: 100%;
+  padding: 6px 0 4px 0;
+  border-bottom: 1px solid gainsboro;
+  font-weight: 700;
+  text-align: left;
+}
+
+#stop #one #spotify .pagespot .song nomt, noma, tps {
+  display: inline-block;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 5px;
+}
+
+#stop #one #spotify .pagespot .song nomt {
+  width: 50%;
+}
+
+#stop #one #spotify .pagespot .song noma {
+  width: 37%;
+}
+
+#stop #one #spotify .pagespot .song tps {
+  width: 13%;
+}
+
+#stop #one #spotify .pagespot .current {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0 10px 0;
+  position: relative;
+}
+
+#stop #one #spotify .pagespot .current .buttons {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#stop #one #spotify .pagespot .current .buttons ga, dr {
+  font-family: 'honeybee';
+  color: #5D5D5D;
+  font-size: 14px;
+}
+
+#stop #one #spotify .pagespot .current .buttons ga:before, ga:after, dr:before, dr:after {
+  margin: 0 7px;
+  cursor: pointer;
+}
+
+#stop #one #spotify .pagespot .current .buttons ga:before {
+  content: '\eb4e';
+}
+
+#stop #one #spotify .pagespot .current .buttons ga:after {
+  content: '\ead9';
+  transform: rotate(180deg);
+  display: inline-block;
+}
+
+#stop #one #spotify .pagespot .current .buttons play:before {
+  content: '\eafd';
+  font-family: 'honeybee';
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#stop #one #spotify .pagespot .current .buttons dr:before {
+  content: '\ead9';
+}
+
+#stop #one #spotify .pagespot .current .buttons dr:after {
+  content: '\ebc3';
+}
+
+#stop #one #spotify .pagespot .current .time {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#stop #one #spotify .pagespot .current .time .progress {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 15px;
+  height: 4px;
+  width: 60%;
+  background: #bfbfbf;
+}
+
+#stop #one #spotify .pagespot .current .time .bar {
+  background: var(--accent2);
+  height: 100%;
+}
+
+#stop #one #spotify .pagespot .current .up {
+  position: absolute;
+  top: 5px;
+  font-family: 'honeybee';
+  opacity: 0;
+  padding: 4px;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  transition: .5s;
+  cursor: pointer;
+}
+
+#stop #one #spotify .pagespot .current:hover .up {
+  opacity: 1;
+}
+
+#stop #one #spotify .pagespot .current .up:before {
+  content: '\ec1e';
+}
+
+#stop #one #spotify .pagespot .current .up span {
+  display: none;
+  cursor: default;
+  font-family: 'Roboto';
+}
+
+#stop #one #spotify .pagespot .current .up:hover span {
+  display: block;
+  z-index: 100;
+  background: linear-gradient(225deg, var(--accent1), var(--accent2));
+  left: 0px;
+  margin: 10px;
+  padding: 13px;
+  position: absolute;
+  bottom: 10px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.15);
+}
+
+#stop #one #spotify .pagespot .current .up:hover span:hover {
+  display: block;
+}
+
+#stop #one #spotify .pagespot .current .up:hover span np {
+  display: inline-block;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+#stop #one #spotify .pagespot .current .up:hover span np:before {
+  content: 'now playing';
+}
+
+#stop #one #spotify .pagespot .current .up:hover span img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.15);
+  margin: 7px 0 10px 0;
+}
+
+#stop #one #spotify .pagespot .current .up:hover span chan {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 900;
+  margin-bottom: 4px;
+  padding: 0 10px;
+  line-height: 12px;
+  box-sizing: border-box;
+}
+
+#stop #one #spotify .pagespot .current .up:hover span arti {
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+
+/* LE GROS MESS POUR FAIRE SLIDE LES CONTENTS */
+#stop #home:checked+label~#one .content:nth-child(2) {
+  left: 0%;
+}
+
+#stop #home:checked+label~#one .content:nth-child(3) {
+  left: 100%;
+}
+
+#stop #home:checked+label~#one .content:nth-child(4) {
+  left: 200%;
+}
+
+#stop #home:checked+label~#one .content:nth-child(5) {
+  left: 300%;
+}
+
+#stop #insta:checked+label~#one .content:nth-child(2) {
+  left: -100%;
+}
+
+#stop #insta:checked+label~#one .content:nth-child(3) {
+  left: 0%;
+}
+
+#stop #insta:checked+label~#one .content:nth-child(4) {
+  left: 100%;
+}
+
+#stop #insta:checked+label~#one .content:nth-child(5) {
+  left: 200%;
+}
+
+#stop #twit:checked+label~#one .content:nth-child(2) {
+  left: -200%;
+}
+
+#stop #twit:checked+label~#one .content:nth-child(3) {
+  left: -100%;
+}
+
+#stop #twit:checked+label~#one .content:nth-child(4) {
+  left: 0%;
+}
+
+#stop #twit:checked+label~#one .content:nth-child(5) {
+  left: 100%;
+}
+
+#stop #spot:checked+label~#one .content:nth-child(2) {
+  left: -300%;
+}
+
+#stop #spot:checked+label~#one .content:nth-child(3) {
+  left: -200%;
+}
+
+#stop #spot:checked+label~#one .content:nth-child(4) {
+  left: -100%;
+}
+
+#stop #spot:checked+label~#one .content:nth-child(5) {
+  left: 0%;
+}

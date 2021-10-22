@@ -1,0 +1,188 @@
+:root {
+  --accent: rebeccapurple;
+}
+
+#space {
+  width: 500px;
+  height: 450px;
+  position: relative;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid var(--accent);
+  font-family: 'Arial';
+}
+
+#space .home {
+  width: 500px;
+  height: 450px;
+  background-size: cover;
+  z-index: 0;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+#space scr {
+  display: block;
+  width: 500px;
+  height: 450px;
+  background: var(--accent);
+  margin-top: -450px;
+  mix-blend-mode: multiply;
+}
+
+#space .name {
+  box-sizing: border-box;
+  width: 450px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -4px;
+  font-size: 60px;
+  text-align: right;
+  line-height: 43px;
+  color: white;
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+
+#space .name o {
+  color: white;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+}
+
+#space .number {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  color: white;
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+
+#space .infos {
+  width: 480px;
+  height: 430px;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.6);
+  box-sizing: border-box;
+  padding: 10px;
+  position: absolute;
+  top: 20px;
+  margin: 0 10px;
+  transition: ease-in-out 0.7s;
+  border: 1px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+}
+
+#space .infos img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border: 4px double white;
+}
+
+#space .infos #quote {
+  color: white;
+  width: 480px;
+  box-sizing: border-box;
+  padding: 0 30px;
+  text-align: center;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 20px;
+  font-family: 'Times';
+  line-height: 13px;
+}
+
+#space .infos #quote:before {
+  content: '❝';
+  margin-right: 10px;
+}
+
+#space .infos #quote:after {
+  content: '❞';
+  margin-left: 5px;
+}
+
+#space .infos #quote:before, #space .infos #quote:after {
+  color: var(--accent);
+}
+
+#space .infos bar {
+  display: block;
+  width: 480px;
+  height: 1px;
+  background: white;
+}
+
+#space .infos #tabs {
+  width: 200px;
+  height: 180px;
+  box-sizing: border-box;
+  padding: 5px;
+  text-align: justify;
+  color: white;
+  font-size: 12px;
+  overflow: auto;
+  line-height: 13px;
+}
+
+#space .infos .chrono {
+  margin-left: 10px;
+}
+
+#space:hover .infos {
+  opacity: 1;
+}
+
+#space .number, #space .name {
+  transition: ease-in-out 0.7s;
+}
+
+#space:hover .number, #space:hover .name {
+  opacity: 0;
+}
+
+#space b {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+#space x {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--accent);
+  padding: 0 4px;
+}
+
+#space i {
+  color: gainsboro;
+  font-family: 'Times';
+  font-size: 14px;
+}
+
+#space u {
+  -webkit-text-decoration: underline var(--accent);
+  text-decoration: underline var(--accent);
+}
+
+#space ::-webkit-scrollbar {
+  width: 6px;
+}
+
+#space ::-webkit-scrollbar-thumb {
+  border: 1px solid white;
+}
+
+#space ::-webkit-scrollbar-track {
+  border: 1px solid white;
+}

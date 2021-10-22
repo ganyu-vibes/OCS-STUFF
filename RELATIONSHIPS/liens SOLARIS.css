@@ -1,0 +1,140 @@
+:root {
+  --w1: whitesmoke;
+  --w2: gainsboro;
+  --color1: rebeccapurple;
+  --color2: #B298CC;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700');
+
+body {
+  cursor: url(http://cur.cursors-4u.net/cursors/cur-4/cur330.cur), auto !important;
+}
+
+/* MAIN CODE */
+.base {
+  width: 480px;
+  font-family: 'Arial';
+  font-size: 13px;
+  background: white;
+  border: 10px solid whitesmoke;
+  outline: 1px solid gainsboro;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.base .title-2 {
+  order: 0;
+  width: 470px;
+  font-size: 50px;
+  font-style: italic;
+  color: var(--color1);
+  font-weight: bold;
+  letter-spacing: -3px;
+  line-height: 38px;
+  z-index: 1;
+}
+
+.base .subtitle {
+  order: 1;
+  z-index: 0;
+  background: black;
+  color: white;
+  text-transform: uppercase;
+  padding: 4px;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  transform: translateY(-10%);
+  margin-bottom: 15px;
+}
+
+.base .people {
+  order: 2;
+  width: 445px;
+  display: flex;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+.base .people .descr-people {
+  order: 0;
+  width: 400px;
+  height: 88px;
+  overflow: auto;
+  background: var(--w1);
+  border: 1px solid var(--w2);
+  text-align: justify;
+  padding: 10px;
+}
+
+.base m {
+  background: linear-gradient(to right, var(--color1), var(--color2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-style: italic;
+  transition: 0.7s ease-in-out;
+
+  &:hover {
+    letter-spacing: 2px;
+    cursor: crosshair;
+  }
+}
+
+.base .people .icon-people {
+  order: 1;
+  width: 140px;
+  height: 110px;
+  background: linear-gradient(45deg, var(--color1), var(--color2));
+}
+
+.base .icon-people img {
+  width: 70px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 5px;
+  border: 1px solid white;
+  margin-top: 15px;
+  filter: grayscale(1);
+
+  &:hover {
+    cursor: crosshair;
+  }
+}
+
+/* TEXT EFFECTS */
+.base a {
+  color: grey;
+  cursor: crosshair;
+
+  &:hover {
+    font-style: italic;
+    text-decoration: none;
+    color: silver;
+  }
+}
+
+/* SCROLLBAR */
+.base ::-webkit-scrollbar {
+  width: 7px;
+  height: 1px;
+  background: white;
+}
+
+.base ::-webkit-scrollbar-track {
+  background-color: lightgrey;
+  border: 3px solid white;
+}
+
+.base ::-webkit-scrollbar-thumb {
+  background: var(--color1);
+  border: 3px solid white;
+}
+
+/* SÉLECTION */
+.base ::selection {
+  color: white;
+  background: var(--color2);
+}

@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap');
+
+:root {
+  --font1: 'Roboto';
+  --font2: 'Roboto Mono';
+  --font3: 'Times';
+  --accent1: #A62A3D;
+  --accent2: #C35C67;
+}
+
+#saber {
+  width: 440px;
+  background: none;
+  position: relative;
+  margin: auto;
+  font-family: var(--font1);
+  font-size: 12px;
+  border-top: 3px solid var(--accent1);
+  color: black;
+}
+
+#saber div {
+  box-sizing: border-box;
+}
+
+#saber ::-webkit-scrollbar {
+  width: 4px;
+}
+
+#saber ::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+#saber ::-webkit-scrollbar-track {
+  background: none;
+}
+
+#saber zz {
+  font-family: var(--font2);
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+#saber zz:before {
+  content: '\ec7e';
+  font-family: 'honeybee';
+  color: var(--accent2);
+  margin-right: 4px;
+  font-size: 9px;
+}
+
+#saber zz:after{
+  content: ';';
+}
+
+#saber yy {
+  color: var(--accent1);
+  letter-spacing: -1px;
+  font-weight: bold;
+  border-bottom: 1px dashed white;
+}
+
+/* TOP DARK LIKE A CAT */
+
+#saber #light {
+  width: 100%;
+  background: #2f2f2f;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#saber #light sp {
+  color: white;
+  font-size: 45px;
+  letter-spacing: -6px;
+}
+
+#saber #light .topicon {
+  width: 70px;
+  border-radius: 100px;
+  border: 5px solid white;
+  margin: 20px 10px 20px 0;
+  object-fit: cover;
+}
+
+#saber #light input {
+  display: none;
+}
+
+#saber #light label {
+  color: white;
+  letter-spacing: -5px;
+  font-size: 28px;
+  margin-left: 10px;
+  font-family: var(--font2);
+  border-bottom: 3px dotted var(--accent1);
+  transition: .4s ease-in-out;
+  position: relative;
+}
+
+#saber #light label:hover {
+  cursor: crosshair;
+  color: #545454;
+}
+
+#saber #light #laser:checked ~ #dark {
+  transition: 0.5s;
+  transition-delay: 0s;
+  height: 350px;
+}
+
+/* BOTTOM LIGHT CONTENT */
+
+#saber #light #dark {
+  position: relative;
+  width: 100%;
+  height: 0px;
+  background: var(--accent2);
+  overflow: hidden;
+  transition: .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#saber #light #dark #appli {
+  background: white;
+  border: 1px solid gainsboro;
+  width: 85%;
+  height: 230px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+#saber #light #dark #appli .sidebar {
+  width: 100%;
+  position: relative;
+  background: #ededed;
+  height: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 4px;
+}
+
+#saber #light #dark #appli .sidebar one, #saber #light #dark #appli .sidebar two, #saber #light #dark #appli .sidebar thr {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  margin: 0 2px;
+}
+
+#saber one {
+  background: var(--accent1);
+}
+
+#saber two {
+  background: var(--accent2);
+}
+
+#saber thr {
+  background: grey;
+}
+
+#saber #light #dark #appli .sidebar fou {
+  position: absolute;
+  right: 6px;
+}
+
+#saber #light #dark #appli .sidebar fou:before {
+  content: '\ec8e';
+  font-family: 'honeybee';
+  color: black;
+  font-size: 7px;
+}
+
+#saber #light #dark #appli .content {
+  width: 100%;
+  height: 213px;
+  overflow: auto;
+  background-size: cover;
+  border-radius: 0 0 5px 5px;
+}
+
+#saber #light #dark #appli .content .eottae {
+  position: absolute;
+  background: white;
+  color: var(--accent1);
+  font-family: var(--font2);
+  padding: 3px 5px;
+  font-size: 18px;
+  letter-spacing: -2px;
+  transition: .5s;
+}
+
+#saber #light #dark #appli .content .eottae:hover {
+  background: var(--accent1);
+  color: white;
+  cursor: default;
+}
+
+#saber #light #dark #appli .content .fname {
+  top: 110px;
+  left: 80px;
+}
+
+#saber #light #dark #appli .content .lname {
+  bottom: 80px;
+  right: 90px;
+}
+
+#saber #light #dark #appli .content .info {
+  width: 100%;
+  height: 213px;
+  position: relative;
+  background: white;
+  top: 213px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#saber #light #dark #appli .content .info img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 100%;
+  filter: grayscale(1) brightness(0.8);
+}
+
+#saber #light #dark #appli .content .info .quote {
+  width: 100px;
+  color: rgba(195, 92, 103, 0.6);
+  font-family: var(--font3);
+  font-size: 20px;
+  margin-top: 10px;
+  overflow: auto;
+  max-height: 90px;
+  font-style: italic;
+  letter-spacing: -1px;
+  line-height: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#saber #light #dark #appli .content .info bar {
+  display: block;
+  height: 100%;
+  width: 1px;
+  background: silver;
+}
+
+#saber #light #dark #appli .content .info .me {
+  width: 220px;
+  height: 80%;
+  overflow: auto;
+}
+
+#saber #light #dark #appli .content .chrono {
+  width: 100%;
+  height: 213px;
+  position: relative;
+  top: 213px;
+  background: linear-gradient(45deg, var(--accent1), var(--accent2));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#saber #light #dark #appli .content .chrono .text {
+  width: 60%;
+  height: 70%;
+  border: 1px solid white;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 10px;
+  color: white;
+  overflow: auto;
+  text-align: justify;
+}
