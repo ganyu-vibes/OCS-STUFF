@@ -1,0 +1,347 @@
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700");
+
+:root {
+  --font: "Playfair Display", sans-serif;
+  --c1: #663399;
+  --c2: #B298CC;
+  --c3: rgba(102, 51, 153, 0.3);
+}
+
+body {
+  cursor: url(http://cur.cursors-4u.net/cursors/cur-4/cur330.cur), auto !important;
+}
+
+/* FOND DE BASE */
+.base {
+  width: 480px;
+  font-family: 'Arial';
+  font-size: 13px;
+  line-height: 14px;
+  background: white;
+  position: relative;
+  margin: auto;
+  border: 10px solid whitesmoke;
+  outline: 1px solid gainsboro;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* NOM DU PERSO */
+.base .name {
+  order: 0;
+  width: 470px;
+  font-size: 50px;
+  font-style: italic;
+  color: var(--c1);
+  font-weight: bold;
+  letter-spacing: -3px;
+  line-height: 38px;
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+
+.base .name first {
+  color: black;
+  font-style: italic;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--c1);
+}
+
+/* SOUS-TITRE */
+.base .subtitle {
+  order: 1;
+  background: black;
+  color: white;
+  text-transform: uppercase;
+  padding: 4px;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  -webkit-transform: translateY(-10%);
+  transform: translateY(-10%);
+  margin-bottom: 15px;
+}
+
+/* 1ER GIF */
+.base .headgif {
+  order: 2;
+  width: 430px;
+  height: 170px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-filter: grayscale(100%) brightness(0.8);
+  filter: grayscale(100%) brightness(0.8);
+  padding: 7px;
+  border: 1px solid grey;
+  margin-bottom: 15px;
+}
+
+/* BLOC ICON */
+.base .icons {
+  order: 3;
+  background: linear-gradient(45deg, var(--c1), var(--c2));
+  text-align: center;
+  width: 110px;
+  height: 222px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.base .icons img {
+  order: 0;
+  width: 70px;
+  height: 70px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 100%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  background: white;
+  padding: 5px;
+  border: 1px solid grey;
+  margin-bottom: 10px;
+}
+
+.base .icons .source {
+  order: 1;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid white;
+  width: 75px;
+  font-size: 10px;
+  line-height: 9px;
+  padding: 4px;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+/* BOUTONS */
+.base input {
+  display: none;
+}
+
+.base label {
+  order: 5;
+  background-color: black;
+  display: block;
+  margin: 10px 5px;
+  color: white;
+  padding: 8px;
+  text-transform: lowercase;
+  font-style: italic;
+  font-size: 11px;
+  letter-spacing: 2px;
+  cursor: crosshair;
+  border: none;
+  z-index: 2;
+}
+
+.base label:hover {
+  background: linear-gradient(to left, var(--c2), var(--c1));
+  box-shadow: inset 0 0 0 3px white;
+  outline: 1px solid grey;
+}
+
+.base input:checked+label {
+  background: linear-gradient(to left, var(--c2), var(--c1));
+  box-shadow: inset 0 0 0 3px white;
+  outline: 1px solid grey;
+  transition: opacity 400ms ease-in-out;
+}
+
+.base #tab1:checked+label~#tabs #infos {
+  opacity: 1;
+  z-index: 5;
+}
+
+.base #tab2:checked+label~#tabs #facts {
+  opacity: 1;
+  z-index: 5;
+}
+
+.base #tab3:checked+label~#tabs #cara {
+  opacity: 1;
+  z-index: 5;
+}
+
+/* CONTENU DES TABS/BLOCS */
+.base #tabs {
+  order: 4;
+  width: 335px;
+  height: 222px;
+  position: relative;
+  overflow: hidden;
+}
+
+.base .content {
+  order: 4;
+  width: 335px;
+  height: 222px;
+  border: 1px solid gainsboro;
+  overflow: auto;
+  background: whitesmoke;
+  padding: 10px;
+  text-align: justify;
+  box-sizing: border-box;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 1s ease-in-out;
+}
+
+/* DIVIDER */
+.base divider {
+  order: 7;
+  width: 445px;
+  height: 1px;
+  z-index: 0;
+  background: grey;
+  position: relative;
+  top: -25px;
+}
+
+/* BLOC HISTOIRE */
+.base .story {
+  order: 8;
+  width: 425px;
+  border: 1px solid gainsboro;
+  min-height: 152px;
+  max-height: 400px;
+  overflow: auto;
+  background: whitesmoke;
+  text-align: justify;
+  padding: 10px;
+}
+
+.base .avatar {
+  width: 100px;
+  float: right;
+  border: 1px solid grey;
+  padding: 5px;
+  margin: 0 0 0 10px;
+}
+
+/* BLOC CREA */
+.base .us {
+  order: 9;
+  width: 424px;
+  max-height: 23px;
+  overflow: auto;
+  background: black;
+  color: white;
+  text-align: justify;
+  padding: 10px;
+  font-size: 11px;
+  margin: 15px 0;
+}
+
+/*    ----------------------------------
+                 TEXT EFFECTS
+      ----------------------------------
+
+TITRE DES BLOCS */
+.base titles {
+  font-family: var(--font);
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 700;
+  display: block;
+  padding-bottom: 7px;
+  margin-bottom: 9px;
+  border-bottom: 1px solid black;
+  transition: 1.5s ease;
+}
+
+.base titles:hover {
+  padding-left: 20px;
+  letter-spacing: 3px;
+}
+
+.base #cara traits {
+  display: block;
+  margin: 15px auto;
+  width: 230px;
+  text-align: center;
+  background: linear-gradient(to right, var(--c1), var(--c2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 11px;
+}
+
+.base a {
+  color: grey;
+  cursor: crosshair;
+}
+
+.base a:hover {
+  font-style: italic;
+  text-decoration: none;
+  color: silver;
+}
+
+.base i {
+  color: dimgrey;
+}
+
+.base x {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  box-shadow: inset 0 -4px 0 0 var(--c2);
+  padding: 0 4px;
+  transition: 0.7s;
+}
+
+.base x:hover {
+  box-shadow: inset 0 -18px 0 0 var(--c3);
+}
+
+.base w {
+  color: var(--c1);
+  font-weight: bold;
+}
+
+.base w::before {
+  content: "☾";
+}
+
+.base y {
+  text-transform: uppercase;
+  font-size: 8.5px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* SCROLLBAR */
+.base ::-webkit-scrollbar {
+  width: 7px;
+  height: 1px;
+  background: white;
+}
+
+.base ::-webkit-scrollbar-track {
+  background-color: lightgrey;
+  border: 3px solid white;
+}
+
+.base ::-webkit-scrollbar-thumb {
+  background: var(--c1);
+  border: 3px solid white;
+}
+
+/* SÉLECTION */
+.base ::-moz-selection {
+  color: white;
+  background: var(--c2);
+}
+
+.base ::selection {
+  color: white;
+  background: var(--c2);
+}

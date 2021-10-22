@@ -1,0 +1,364 @@
+/* LES OUTILS */
+/*
+$c1: #bec1d9; //couleur foncée
+$c2: #f4b3de; //couleur claire
+$f1: 'Playfair Display';
+$f2: 'Open Sans';
+$g1: linear-gradient(90deg, $c1, $c2); // horizontal, f to c
+$g2: linear-gradient(90deg, $c2, $c1); // horizontal, c to f
+$g3: linear-gradient(180deg, $c1, $c2); // vertical, f to c
+$g4: linear-gradient(180deg, $c2, $c1); // vertical, c to f
+
+
+:root {
+  --c1: #bec1d9;
+  --c2: #f4b3de;
+  --f1: 'Playfair Display';
+  --f2: 'Open Sans';
+} */
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Roboto:400,700,900&display=swap');
+
+#fake {
+  --f1: 'Playfair Display';
+  --f2: 'Roboto';
+  --gradient3: linear-gradient(90deg, var(--c1), var(--c2));
+  --gradient4: linear-gradient(90deg, var(--c2), var(--c1));
+  --gradient5: linear-gradient(180deg, var(--c1), var(--c2));
+  --gradient6: linear-gradient(180deg, var(--c2), var(--c1));
+}
+
+/* LA BASE */
+#fake {
+  width: 500px;
+  background: white;
+  font-family: var(--f2);
+  z-index: 0;
+  font-size: 11px;
+  color: black;
+  margin: auto;
+  position: relative;
+  border: 1px solid gainsboro;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 13px;
+}
+
+#fake div {
+  box-sizing: border-box;
+}
+
+#fake ::selection {
+  color: white;
+  background: #333;
+}
+
+#fake a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 0 3px;
+  background-size: 100% 35%;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-image: var(--gradient4);
+  transition: background .3s;
+}
+
+#fake a:hover {
+  background-size: 100% 100%;
+}
+
+/* LE NOM DU PERSO */
+#fake #name {
+  width: 75%;
+  text-align: right;
+  font-family: var(--f1);
+  letter-spacing: -1px;
+  padding: 18px 20px;
+  font-weight: 900;
+  font-size: 35px;
+  line-height: 1.15;
+}
+
+#fake #name ec {
+  color: var(--c1);
+  background: var(--gradient3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#fake #name sp {
+  color: black;
+  font-style: italic;
+  text-decoration: underline dashed gainsboro;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: var(--c2);
+}
+
+#fake #sub {
+  width: 100%;
+  font-family: var(--f2);
+  text-align: right;
+  font-size: 9px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0;
+}
+
+#fake #topgif {
+  float: right;
+  width: 25%;
+  height: 100px;
+  object-fit: cover;
+  background-size: cover;
+  border-bottom: 1px solid var(--c1);
+  border-left: 1px solid var(--c2);
+  filter: grayscale(0);
+}
+
+/* CADRE DE GAUCHE */
+#fake #cad1 {
+  width: 40%;
+  height: 465px;
+  background: var(--gradient5);
+  z-index: 0;
+  border-right: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+}
+
+#fake #cad1 img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border: 10px solid rgba(255, 255, 255, 0.5);
+  filter: grayscale(1);
+  box-shadow: 0 0 0 1px white;
+  border-radius: 100px;
+}
+
+#fake #cad1 .quo {
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  font-family: var(--f1);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 9px;
+}
+
+#fake #cad1 .quo:before {
+  content: '―';
+  margin-right: 5px;
+}
+
+#fake #cad1 .infor {
+  width: 85%;
+  height: 250px;
+  border-top: 1px solid var(--c1);
+  text-align: justify;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px;
+  overflow: auto;
+}
+
+#fake #cad1 .infor xx {
+  font-family: var(--f1);
+  font-weight: 800;
+  font-size: 11px;
+  text-decoration: underline dashed white;
+}
+
+/* CADRE DE DROITE */
+#fake #cad2 {
+  width: 60%;
+  background: whitesmoke;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 25px 0 0 0;
+}
+
+#fake #cad2 yy {
+  font-family: var(--f1);
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin-right: 5px;
+  font-size: 15px;
+  background: var(--gradient3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#fake #cad2 input {
+  display: none;
+}
+
+#fake #cad2 label {
+  position: relative;
+  margin-right: 10px;
+  font-size: 13px;
+  letter-spacing: -1px;
+}
+
+#fake #cad2 label:hover {
+  cursor: pointer;
+  text-decoration: line-through;
+}
+
+#fake #cad2 input:checked+label {
+  font-weight: bold;
+  font-style: italic;
+}
+
+#fake #cad2 input:checked+label:hover {
+  text-decoration: none;
+}
+
+#fake #cad2 .tabs {
+  width: 53%;
+  height: 62%;
+  z-index: 0;
+  position: absolute;
+  top: 26%;
+  overflow: hidden;
+}
+
+#fake #cad2 .tabs #content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 1s ease-in-out;
+  opacity: 0;
+}
+
+#fake #cad2 .tabs .cf div {
+  padding: 10px;
+  overflow: auto;
+  text-align: justify;
+}
+
+#fake #cad2 .tabs .cf title {
+  font-family: var(--f1);
+  font-size: 13px;
+  font-weight: 700;
+  display: block;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid black;
+}
+
+#fake #cad2 .tabs .cf .cara {
+  width: 100%;
+  height: 50%;
+  background: white;
+  border: 1px solid gainsboro;
+  margin-bottom: 8px;
+}
+
+#fake #cad2 .tabs .cf .anec {
+  width: 100%;
+  height: 50%;
+  background: white;
+  border: 1px solid gainsboro;
+}
+
+#fake #cad2 .tabs .cf .anec zz {
+  background: var(--gradient4);
+  font-weight: bold;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#fake #cad2 .tabs .cf .anec zz:before {
+  content: '.｡*ﾟ+.*.｡';
+}
+
+#fake #cad2 .tabs .hist {
+  padding: 10px;
+  background: white;
+  text-align: justify;
+  overflow: auto;
+  z-index: 0;
+  border: 1px solid gainsboro;
+}
+
+#fake #cad2 #b1:checked+label~.tabs #content:nth-child(1) {
+  opacity: 1;
+  z-index: 2;
+}
+
+#fake #cad2 #b2:checked+label~.tabs #content:nth-child(2) {
+  opacity: 1;
+  z-index: 2;
+}
+
+#fake #cad2 .user {
+  position: absolute;
+  bottom: 23px;
+  background: black;
+  width: 53%;
+  height: 45px;
+  color: white;
+  padding: 8px;
+  overflow: auto;
+  text-align: justify;
+}
+
+#fake #cad2 .user ww {
+  font-family: var(--f1);
+  font-weight: 600;
+  letter-spacing: -1px;
+  font-size: 11px;
+  text-decoration: underline var(--c2);
+}
+
+/* EFFETS DE TEXTE */
+#fake b {
+  color: var(--c2);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+}
+
+#fake #cad1 i {
+  color: white;
+}
+
+#fake #cad2 i {
+  color: #888;
+}
+
+#fake u {
+  color: var(--c1);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* SCROLLBAR */
+#fake #cad1 ::-webkit-scrollbar {
+  width: 3px !important;
+}
+
+#fake #cad1 ::-webkit-scrollbar-thumb {
+  background: white !important;
+}
+
+#fake #cad1 ::-webkit-scrollbar-track {
+  background: none !important;
+}
+
+#fake #cad2 ::-webkit-scrollbar {
+  width: 3px !important;
+}
+
+#fake #cad2 ::-webkit-scrollbar-thumb {
+  background: var(--gradient5) !important;
+}
+
+#fake #cad2 ::-webkit-scrollbar-track {
+  background: none !important;
+}

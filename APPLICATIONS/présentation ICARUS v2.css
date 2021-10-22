@@ -1,0 +1,365 @@
+/* -----------------------------------------
+(c) patr.onus, fiche de présentation "ICARUS"
+--------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+
+/* VARIABLES MODIFIABLES */
+#po-icarus {
+  --po-black: #2f2f2f;
+  --po-grey: #777;
+  --po-font1: "Roboto";
+  --po-font2: "Libre Baskerville";
+}
+
+#po-icarus {
+  width: 450px;
+  height: auto;
+  margin: auto;
+  padding: 7px;
+  position: relative;
+  font-size: 11px;
+  font-family: var(--po-font1);
+  color: var(--po-black);
+  line-height: 1.15;
+  border: 1px solid;
+  border-image: linear-gradient(45deg,
+      var(--po-color1),
+      var(--po-color2),
+      var(--po-color3)) 1;
+}
+
+#po-icarus,
+#po-icarus div {
+  box-sizing: border-box;
+}
+
+/* EFFETS DE TEXTE */
+/* Intitulé information */
+#po-icarus zz {
+  display: inline-block;
+  background: var(--po-black);
+  color: white;
+  font-family: var(--po-font2);
+  font-weight: bold;
+  font-size: 9px;
+  padding: 2px 6px;
+  letter-spacing: -0.5px;
+  text-transform: lowercase;
+  margin-top: 4px;
+}
+
+#po-icarus zz:before {
+  content: "< ";
+}
+
+#po-icarus zz:after {
+  content: " >";
+}
+
+/* Un grand titre dans les informations */
+#po-icarus yy {
+  display: block;
+  width: 100%;
+  font-family: var(--po-font2);
+  font-style: italic;
+  font-size: 17px;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+
+/* Intitulé skill */
+#po-icarus xx {
+  font-family: var(--po-font2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+/* Séparation anecdotes */
+#po-icarus ww:before {
+  content: "\eb67";
+  font-family: "honeybee";
+  background-image: linear-gradient(-90deg,
+      var(--po-color1),
+      var(--po-color2),
+      var(--po-color3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 10px;
+}
+
+/* Pseudo */
+#po-icarus vv {
+  width: auto;
+  background: white;
+  color: var(--po-black);
+  padding: 1px 7px;
+  font-size: 9px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Texte plus grand */
+#po-icarus uu {
+  font-size: 12px;
+  font-family: var(--po-font2);
+  font-style: italic;
+}
+
+/* Texte fond dégradé */
+#po-icarus ss {
+  background-image: linear-gradient(-90deg,
+      var(--po-color1),
+      var(--po-color2),
+      var(--po-color3));
+  padding: 0 5px;
+  color: white;
+}
+
+/* Texte gris souligné */
+#po-icarus rr {
+  color: silver;
+  text-decoration: underline;
+}
+
+/* Texte en dégradé */
+#po-icarus qq {
+  font-family: var(--po-font2);
+  font-weight: bold;
+  letter-spacing: -1px;
+  background-image: linear-gradient(90deg,
+      var(--po-color1),
+      var(--po-color2),
+      var(--po-color3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.po-base {
+  width: 100%;
+  background: white;
+}
+
+/* HEADER AVEC ICON & QUOTE */
+.po-head {
+  width: 100%;
+  background-image: linear-gradient(75deg,
+      var(--po-color1),
+      var(--po-color2),
+      var(--po-color3));
+  text-align: center;
+  padding: 40px 0;
+}
+
+.po-head img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 100px;
+  border: 1px solid white;
+  padding: 7px;
+  margin-bottom: 15px;
+  filter: grayscale(1);
+}
+
+.po-head .po-quote {
+  width: 100%;
+  padding: 0 70px;
+  color: white;
+  font-family: var(--po-font2);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 14px;
+}
+
+/* BLOC INFORMATIONS PERSONNAGE */
+.po-middle1 {
+  width: 100%;
+  background: white;
+  padding: 20px;
+  border-left: 1px solid gainsboro;
+  border-right: 1px solid gainsboro;
+}
+
+.po-middle1 .po-name {
+  width: 100%;
+  text-align: right;
+  font-size: 35px;
+  background: white;
+  font-weight: 300;
+  letter-spacing: -2px;
+  line-height: 40px;
+  background-image: linear-gradient(var(--po-color1),
+      var(--po-color2),
+      var(--po-color3));
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+}
+
+.po-middle1 .po-name:before {
+  background-color: gainsboro;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+  right: 0.5em;
+  margin-left: -100%;
+}
+
+.po-infobloc {
+  width: 100%;
+  margin: 15px 0 0 0;
+  text-align: justify;
+}
+
+/* BLOC CARACTERE PERSONNAGE */
+.po-middle2 {
+  width: 100%;
+  background-image: linear-gradient(-100deg,
+      var(--po-color1),
+      var(--po-color2),
+      var(--po-color3));
+  padding: 50px 0 0 25px;
+  position: relative;
+}
+
+.po-middle2 .po-separator {
+  overflow: hidden;
+  width: 89%;
+  text-align: center;
+  color: white;
+  font-size: 17px;
+  position: absolute;
+  top: 14px;
+  left: 25px;
+}
+
+.po-middle2 .po-separator:before,
+.po-middle2 .po-separator:after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: white;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.po-middle2 .po-separator:before {
+  margin-left: -55%;
+  right: 0.5em;
+}
+
+.po-middle2 .po-separator:after {
+  margin-right: -55%;
+  left: 0.5em;
+}
+
+.po-middle2 .po-cara {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  overflow: auto;
+  text-align: justify;
+  background: whitesmoke;
+}
+
+/* BLOC AESTHETIC */
+.po-middle3 {
+  width: 100%;
+  padding: 25px 30px;
+  text-align: justify;
+  position: relative;
+  border-left: 1px solid gainsboro;
+  border-right: 1px solid gainsboro;
+}
+
+.po-divider {
+  overflow: hidden;
+  width: 70%;
+  text-align: center;
+  color: black;
+  font-size: 17px;
+  background-image: linear-gradient(90deg,
+      var(--po-color1),
+      var(--po-color2),
+      var(--po-color3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.po-divider:before,
+.po-divider:after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: gainsboro;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.po-divider:before {
+  margin-left: -55%;
+  right: 0.5em;
+}
+
+.po-divider:after {
+  margin-right: -55%;
+  left: 0.5em;
+}
+
+.po-icons {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 100px;
+  padding: 4px;
+  border: 1px solid gainsboro;
+}
+
+.po-palette {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  margin: 0 2px;
+}
+
+/* BLOC CREATEUR */
+.po-tail {
+  width: 100%;
+  padding: 15px;
+  background-image: linear-gradient(90deg,
+      var(--po-color1),
+      var(--po-color2),
+      var(--po-color3));
+}
+
+.po-tail .po-realme {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  border-top: 1px solid white;
+  padding: 10px;
+  text-align: justify;
+}
+
+/* CREDIT, merci de ne pas enlever */
+#patronus-credit {
+  width: 100px;
+  color: #141414;
+  margin: 3px auto;
+  font-size: 7px;
+  text-align: center;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+#po-icarus:hover+#patronus-credit,
+#patronus-credit:hover {
+  opacity: 1;
+}
