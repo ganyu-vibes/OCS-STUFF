@@ -1,0 +1,121 @@
+/* __FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Metal&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@400;900&display=swap");
+/* __VARIABLES */
+/* __MAIN STYLE */
+#gny-virtual {
+  width: 80%;
+  max-width: 700px;
+  box-sizing: border-box;
+  margin: auto;
+  padding: 1rem;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #181818;
+  background: linear-gradient(-45deg, #7297db, #c3d3f0);
+  display: flex;
+  flex-wrap: wrap;
+  /* __TOPBAR HEADER */
+  /* __LEFT SIDE */
+  /* __RIGHT SIDE */
+}
+#gny-virtual * {
+  box-sizing: border-box;
+}
+#gny-virtual .menu {
+  width: 100%;
+  height: 2.6rem;
+  border-bottom: 1px solid #181818;
+}
+#gny-virtual .menu i {
+  font-size: 1.5rem;
+  padding: 0.5rem 0.8rem;
+  margin-left: 1.5rem;
+  position: relative;
+}
+#gny-virtual .menu i:after {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(114, 151, 219, 0.3);
+  transition: 0.3s ease-in-out;
+}
+#gny-virtual .menu i:hover {
+  cursor: pointer;
+  color: #fff;
+}
+#gny-virtual .menu i:hover:after {
+  width: 100%;
+  height: 100%;
+}
+#gny-virtual .menu i.active {
+  color: #fff;
+  border-bottom: 3px solid #181818;
+}
+#gny-virtual .main {
+  width: 65%;
+  padding: 1rem;
+  border-right: 1px solid #181818;
+}
+#gny-virtual .character {
+  width: 35%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+#gny-virtual .character .name {
+  font-family: "Koh Santepheap", serif;
+  margin: 0;
+  font-size: 1.8rem;
+  color: #fff;
+}
+#gny-virtual .character .stars {
+  color: #fff;
+}
+#gny-virtual .character .level {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+}
+#gny-virtual .character .level span {
+  color: rgba(255, 255, 255, 0.6);
+}
+#gny-virtual .character .separator {
+  width: 100%;
+  height: 3px;
+  margin: 0.7rem 0;
+  background: rgba(37, 74, 143, 0.2);
+  border-radius: 3px;
+}
+#gny-virtual .character .avatar {
+  text-align: center;
+  margin: 0 0 0.7rem 0;
+}
+#gny-virtual .character .avatar img {
+  width: 80%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 100px;
+  border: 10px solid rgba(255, 255, 255, 0.4);
+  outline: 1px solid #fff;
+}
+#gny-virtual .character .label {
+  background: #181818;
+  color: #fff;
+  padding: 2px 0.5rem;
+  margin: 0 0 0.5rem 0;
+}
+#gny-virtual .character .input {
+  margin: 0 0 0.5rem 0;
+}

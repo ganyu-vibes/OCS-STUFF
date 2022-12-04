@@ -1,0 +1,156 @@
+/* __FONTS */
+// Inter
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metal&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@400;900&display=swap');
+
+/* __VARIABLES */
+$font-text: 'Inter', sans-serif;
+$font-title: 'Koh Santepheap', serif;
+
+$radius: 4px;
+$transition: .3s ease-in-out;
+
+$col-white: #fff;
+$col-white-clear: adjust-color($col-white, $alpha: -.4);
+$col-white-clearer: adjust-color($col-white, $alpha: -.6);
+$col-black: #181818;
+$col-blue: #7297db;
+$col-blue-light: adjust-color($col-blue, $lightness: 20%);
+$col-blue-dark: adjust-color($col-blue, $lightness: -30%);
+$col-gradient: linear-gradient(-45deg, $col-blue, $col-blue-light);
+
+/* __MAIN STYLE */
+#gny-virtual {
+    width: 80%;
+    max-width: 700px;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 1rem;
+    font-family: $font-text;
+    font-size: 14px;
+    font-weight: 500;
+    color: $col-black;
+    background: $col-gradient;
+    display: flex;
+    flex-wrap: wrap;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* __TOPBAR HEADER */
+    .menu {
+        width: 100%;
+        height: 2.6rem;
+        border-bottom: 1px solid $col-black;
+
+        i {
+            font-size: 1.5rem;
+            padding: .5rem .8rem;
+            margin-left: 1.5rem;
+            position: relative;
+
+            &:after {
+                content: '';
+                width: 0;
+                height: 0;
+                display: block;
+                border-radius: 100%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                bottom: 0;
+                background: adjust-color($col-blue, $alpha: -.7);
+                transition: $transition;
+            }
+
+            &:hover {
+                cursor: pointer;
+                color: $col-white;
+
+                &:after {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        i.active {
+            color: $col-white;
+            border-bottom: 3px solid $col-black;
+        }
+    }
+
+    /* __LEFT SIDE */
+    .main {
+        width: 65%;
+        padding: 1rem;
+        border-right: 1px solid $col-black;
+    }
+
+    /* __RIGHT SIDE */
+    .character {
+        width: 35%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        .name {
+            font-family: $font-title;
+            margin: 0;
+            font-size: 1.8rem;
+            color: $col-white;
+        }
+
+        .stars {
+            color: $col-white;
+        }
+
+        .level {
+            color: $col-white;
+            font-weight: 700;
+            font-size: 1rem;
+
+            span {
+                color: $col-white-clear;
+            }
+        }
+
+        .separator {
+            width: 100%;
+            height: 3px;
+            margin: .7rem 0;
+            background: adjust-color($col-blue-dark, $alpha: -.8);
+            border-radius: 3px;
+        }
+
+        .avatar {
+            text-align: center;
+            margin: 0 0 .7rem 0;
+
+            img {
+                width: 80%;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                border-radius: 100px;
+                border: 10px solid $col-white-clearer;
+                outline: 1px solid $col-white;
+            }
+        }
+
+        .label {
+            background: $col-black;
+            color: $col-white;
+            padding: 2px .5rem;
+            margin: 0 0 .5rem 0;
+        }
+
+        .input {
+            margin: 0 0 .5rem 0;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "ocs-stuff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "watch": "sass --watch APPLICATIONS/scss:APPLICATIONS --no-source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ganyu-vibes/OCS-STUFF.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ganyu-vibes/OCS-STUFF/issues"
+  },
+  "homepage": "https://github.com/ganyu-vibes/OCS-STUFF#readme"
+}
