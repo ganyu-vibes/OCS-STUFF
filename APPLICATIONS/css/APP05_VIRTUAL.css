@@ -36,20 +36,6 @@
   margin-left: 1.5rem;
   position: relative;
 }
-#gny-virtual .menu i:after {
-  content: "";
-  width: 0;
-  height: 0;
-  display: block;
-  border-radius: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(114, 151, 219, 0.3);
-  transition: 0.3s ease-in-out;
-}
 #gny-virtual .menu i:hover {
   cursor: pointer;
   color: #fff;

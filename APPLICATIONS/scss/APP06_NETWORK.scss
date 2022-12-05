@@ -1,0 +1,221 @@
+/* __FONTS */
+$google-font-text: Inter;
+$google-font-display: Messapia;
+$google-font-mono: Roboto Mono;
+
+@import url('https://fonts.googleapis.com/css2?family=#{$google-font-text}:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=#{$google-font-mono}:wght@400;600;900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=#{$google-font-display}:wght@400;900&display=swap');
+
+@font-face {
+    font-family: $google-font-display;
+    src: url("../fonts/#{$google-font-display}-Bold.woff2") format("woff2"),
+         url("../fonts/#{$google-font-display}-Bold.woff") format("woff");
+}
+
+/* __VARIABLES */
+$font-text: $google-font-text, sans-serif;
+$font-display: $google-font-display, serif;
+$font-mono: $google-font-mono, Courier New;
+
+$radius: 6px;
+$transition: .3s ease-in-out;
+
+$col-white: #fff;
+$col-black: #1c1c1c;
+$col-black-opacity: adjust-color($col-black, $alpha: -.7);
+$col-primary: #3969da;
+$col-secondary: #954aec;
+$col-tertiary: #ef50e4;
+
+/* __MAIN STYLE */
+#gny-network {
+    width: 80%;
+    max-width: 700px;
+    box-sizing: border-box;
+    margin: auto;
+    backdrop-filter: invert(100%);
+    font-family: $font-text;
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: 400;
+    color: $col-white;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    border-radius: $radius;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('../images/topography.webp');
+        filter: invert(80%);
+        border-radius: $radius;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    > div {
+        position: relative;
+    }
+
+    gnytitle {
+        font-family: $font-display;
+        margin: 0.5rem 0;
+        display: inline-block;
+
+        &:before {
+            content: "\f6cb";
+            font-family: 'Phosphor';
+            font-size: 1.2rem;
+            margin-right: 5px;
+            color: $col-primary;
+        }
+    }
+
+    .window-top {
+        width: 100%;
+        padding: 0.2rem 0.5rem;
+        background: $col-black;
+        border-radius: $radius $radius 0 0;
+        font-family: $font-mono;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .main {
+        width: 100%;
+        padding: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+
+            > div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                > i {
+                    font-size: 2.5rem;
+                }
+
+                > span {
+                    font-family: $font-mono;
+                }
+            }
+
+            div:nth-of-type(1) i {
+                color: $col-primary;
+            }
+
+            div:nth-of-type(2) i {
+                color: $col-secondary;
+            }
+
+            div:nth-of-type(3) i {
+                color: $col-tertiary;
+            }
+        }
+
+        .image-stats {
+            width: 100%;
+            height: 70px;
+            filter: grayscale(1) brightness(0.5);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .stats {
+            display: flex;
+            gap: 1.5rem;
+
+            .infos {
+                flex: 1 1 0px;
+            }
+
+            .charts {
+                $pie-col: $col-black;
+
+                flex: 1 1 0px;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .one-stat {
+                    max-width: 40%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-family: $font-display;
+
+                    .pie-1 {
+                        $pie-col: $col-secondary;
+                    }
+    
+                    .pie {
+                        --percentage: 50;
+                        $pie-wid: 100%;
+                        $pie-bor: 20px;
+                        
+                        width: $pie-wid;
+                        aspect-ratio: 1;
+                        position: relative;
+                        display: inline-grid;
+                        margin: 5px;
+                        place-content: center;
+                        font-family: $font-mono;
+                        font-size: 1.4rem;
+    
+                        &:before,
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            border-radius: 50%;
+                        }
+    
+                        &:before {
+                            inset: 0;
+                            background:
+                                radial-gradient(farthest-side, $pie-col 98%,#0000) top/$pie-bor $pie-bor no-repeat,
+                                conic-gradient($pie-col calc(var(--percentage)*1%), #0000 0);
+                            -webkit-mask: radial-gradient(farthest-side, #0000 calc(99% - $pie-bor), #000 calc(100% - $pie-bor));
+                                mask: radial-gradient(farthest-side, #0000 calc(99% - $pie-bor), #000 calc(100% - $pie-bor));
+                            background-size: 0 0, auto;
+                        }
+    
+                        &:after {
+                            content: none;
+                            inset: calc(50% - $pie-bor/2);
+                            background: $pie-col;
+                            transform: rotate(calc(var(--percentage)*3.6deg)) translateY(calc(50% - $pie-wid/2));
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        width: 100%;
+        margin: 0 1rem 1rem 1rem;
+        border-radius: $radius;
+        background: $col-black-opacity;
+        backdrop-filter: blur(1px);
+        border: 1px solid $col-black;
+    }
+}

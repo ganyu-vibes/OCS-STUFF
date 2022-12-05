@@ -52,21 +52,6 @@ $col-gradient: linear-gradient(-45deg, $col-blue, $col-blue-light);
             margin-left: 1.5rem;
             position: relative;
 
-            &:after {
-                content: '';
-                width: 0;
-                height: 0;
-                display: block;
-                border-radius: 100%;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                bottom: 0;
-                background: adjust-color($col-blue, $alpha: -.7);
-                transition: $transition;
-            }
-
             &:hover {
                 cursor: pointer;
                 color: $col-white;

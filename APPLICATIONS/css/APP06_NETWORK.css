@@ -1,0 +1,163 @@
+/* __FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto Mono:wght@400;600;900&display=swap");
+@font-face {
+  font-family: Messapia;
+  src: url("../fonts/Messapia-Bold.woff2") format("woff2"), url("../fonts/Messapia-Bold.woff") format("woff");
+}
+/* __VARIABLES */
+/* __MAIN STYLE */
+#gny-network {
+  width: 80%;
+  max-width: 700px;
+  box-sizing: border-box;
+  margin: auto;
+  backdrop-filter: invert(100%);
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 400;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  border-radius: 6px;
+}
+#gny-network:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/topography.webp");
+  filter: invert(80%);
+  border-radius: 6px;
+}
+#gny-network * {
+  box-sizing: border-box;
+}
+#gny-network > div {
+  position: relative;
+}
+#gny-network gnytitle {
+  font-family: Messapia, serif;
+  margin: 0.5rem 0;
+  display: inline-block;
+}
+#gny-network gnytitle:before {
+  content: "\f6cb";
+  font-family: "Phosphor";
+  font-size: 1.2rem;
+  margin-right: 5px;
+  color: #3969da;
+}
+#gny-network .window-top {
+  width: 100%;
+  padding: 0.2rem 0.5rem;
+  background: #1c1c1c;
+  border-radius: 6px 6px 0 0;
+  font-family: Roboto Mono, Courier New;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+}
+#gny-network .main {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#gny-network .main .nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+#gny-network .main .nav > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#gny-network .main .nav > div > i {
+  font-size: 2.5rem;
+}
+#gny-network .main .nav > div > span {
+  font-family: Roboto Mono, Courier New;
+}
+#gny-network .main .nav div:nth-of-type(1) i {
+  color: #3969da;
+}
+#gny-network .main .nav div:nth-of-type(2) i {
+  color: #954aec;
+}
+#gny-network .main .nav div:nth-of-type(3) i {
+  color: #ef50e4;
+}
+#gny-network .main .image-stats {
+  width: 100%;
+  height: 70px;
+  filter: grayscale(1) brightness(0.5);
+  background-position: center;
+  background-size: cover;
+}
+#gny-network .main .stats {
+  display: flex;
+  gap: 1.5rem;
+}
+#gny-network .main .stats .infos {
+  flex: 1 1 0px;
+}
+#gny-network .main .stats .charts {
+  flex: 1 1 0px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#gny-network .main .stats .charts .one-stat {
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Messapia, serif;
+}
+#gny-network .main .stats .charts .one-stat .pie {
+  --percentage: 50;
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  display: inline-grid;
+  margin: 5px;
+  place-content: center;
+  font-family: Roboto Mono, Courier New;
+  font-size: 1.4rem;
+}
+#gny-network .main .stats .charts .one-stat .pie:before, #gny-network .main .stats .charts .one-stat .pie:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+#gny-network .main .stats .charts .one-stat .pie:before {
+  inset: 0;
+  background: radial-gradient(farthest-side, #954aec 98%, rgba(0, 0, 0, 0)) top/20px 20px no-repeat, conic-gradient(#954aec calc(var(--percentage) * 1%), rgba(0, 0, 0, 0) 0);
+  -webkit-mask: radial-gradient(farthest-side, rgba(0, 0, 0, 0) calc(99% - 20px), #000 calc(100% - 20px));
+  mask: radial-gradient(farthest-side, rgba(0, 0, 0, 0) calc(99% - 20px), #000 calc(100% - 20px));
+  background-size: 0 0, auto;
+}
+#gny-network .main .stats .charts .one-stat .pie:after {
+  content: none;
+  inset: calc(50% - 10px);
+  background: #954aec;
+  transform: rotate(calc(var(--percentage) * 3.6deg)) translateY(0%);
+}
+#gny-network .footer {
+  width: 100%;
+  margin: 0 1rem 1rem 1rem;
+  border-radius: 6px;
+  background: rgba(28, 28, 28, 0.3);
+  backdrop-filter: blur(1px);
+  border: 1px solid #1c1c1c;
+}
