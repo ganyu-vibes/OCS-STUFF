@@ -23,10 +23,15 @@ $transition: .3s ease-in-out;
 
 $col-white: #fff;
 $col-black: #1c1c1c;
+$col-lightgrey: #d0d0d0;
+$col-grey: #777777;
+$col-darkgrey: #3c3c3c;
 $col-black-opacity: adjust-color($col-black, $alpha: -.7);
 $col-primary: #3969da;
 $col-secondary: #954aec;
 $col-tertiary: #ef50e4;
+
+$filter-bw: grayscale(1) brightness(0.5);
 
 /* __MAIN STYLE */
 #gny-network {
@@ -79,6 +84,14 @@ $col-tertiary: #ef50e4;
         }
     }
 
+    sep {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: $col-darkgrey;
+        margin: 5px 0;
+    }
+
     .window-top {
         width: 100%;
         padding: 0.2rem 0.5rem;
@@ -89,6 +102,13 @@ $col-tertiary: #ef50e4;
         text-transform: uppercase;
         display: flex;
         justify-content: space-between;
+    }
+
+    .window {
+        border-radius: $radius;
+        background: $col-black-opacity;
+        backdrop-filter: blur(1px);
+        border: 1px solid $col-black;
     }
 
     .main {
@@ -134,7 +154,7 @@ $col-tertiary: #ef50e4;
         .image-stats {
             width: 100%;
             height: 70px;
-            filter: grayscale(1) brightness(0.5);
+            filter: $filter-bw;
             background-position: center;
             background-size: cover;
         }
@@ -148,38 +168,108 @@ $col-tertiary: #ef50e4;
             }
 
             .charts {
-                $pie-col: $col-black;
-
                 flex: 1 1 0px;
-                width: 100%;
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: space-between;
+                justify-content: center;
+                align-content: flex-start;
+                gap: 1.5rem 2.5rem;
+
+                .profile {
+                    width: 100%;
+
+                    .nametag {
+                        padding: 1rem;
+                        display: flex;
+                        flex: auto;
+                        justify-content: space-around;
+                        align-items: center;
+                        gap: 1rem;
+
+                        img {
+                            max-width: 25%;
+                            aspect-ratio: 1 /1;
+                            object-fit: cover;
+                            filter: $filter-bw drop-shadow(0 0 15px $col-primary);
+                            border-radius: 100vh;
+                        }
+
+                        .name {
+                            h1 {
+                                margin: 0;
+                                line-height: 1.2;
+                                text-align: center;
+                                font-size: 1.3rem;
+                                font-family: $font-display;
+                                text-shadow: 3px 0 0 $col-black;
+                            }
+
+                            .level {
+                                color: $col-lightgrey;
+                                text-transform: uppercase;
+                                font-family: $font-mono;
+                                font-size: 0.8rem;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+
+                .healthbars {
+                    display: grid;
+                    grid-template-columns: auto 80%;
+                    padding: 1rem;
+
+                    .bartag {
+                        font-weight: 600;
+                    }
+
+                    .bar {
+                        --percentage: 50%;
+                        --color: #{$col-primary};
+                        $bar-border: 3px;
+                        $bar-color: $col-black;
+
+                        width: 90%;
+                        height: 10px;
+                        background: $col-black-opacity;
+                        margin: auto;
+                        position: relative;
+                        box-shadow: -#{$bar-border} 0 0 0 $bar-color, $bar-border 0 0 0 $bar-color, 0 -#{$bar-border} 0 0 $bar-color,0 $bar-border 0 0 $bar-color;
+                        
+                        .bar-percentage {
+                            width: var(--percentage);
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            background: var(--color);
+                        }
+                    }
+                }
 
                 .one-stat {
-                    max-width: 40%;
+                    font-family: $font-display;
+                    text-align: center;
+                    width: 30%;
                     display: flex;
                     flex-direction: column;
-                    align-items: center;
-                    font-family: $font-display;
-
-                    .pie-1 {
-                        $pie-col: $col-secondary;
-                    }
+                    gap: 0.5rem;
     
                     .pie {
                         --percentage: 50;
+                        --color: #{$col-secondary};
                         $pie-wid: 100%;
-                        $pie-bor: 20px;
+                        $pie-bor: 14px;
                         
-                        width: $pie-wid;
                         aspect-ratio: 1;
                         position: relative;
                         display: inline-grid;
-                        margin: 5px;
                         place-content: center;
                         font-family: $font-mono;
-                        font-size: 1.4rem;
+                        font-size: 1.2rem;
     
                         &:before,
                         &:after {
@@ -191,8 +281,8 @@ $col-tertiary: #ef50e4;
                         &:before {
                             inset: 0;
                             background:
-                                radial-gradient(farthest-side, $pie-col 98%,#0000) top/$pie-bor $pie-bor no-repeat,
-                                conic-gradient($pie-col calc(var(--percentage)*1%), #0000 0);
+                                radial-gradient(farthest-side, var(--color) 98%,#0000) top/$pie-bor $pie-bor no-repeat,
+                                conic-gradient(var(--color) calc(var(--percentage)*1%), #0000 0);
                             -webkit-mask: radial-gradient(farthest-side, #0000 calc(99% - $pie-bor), #000 calc(100% - $pie-bor));
                                 mask: radial-gradient(farthest-side, #0000 calc(99% - $pie-bor), #000 calc(100% - $pie-bor));
                             background-size: 0 0, auto;
@@ -201,7 +291,7 @@ $col-tertiary: #ef50e4;
                         &:after {
                             content: none;
                             inset: calc(50% - $pie-bor/2);
-                            background: $pie-col;
+                            background: var(--color);
                             transform: rotate(calc(var(--percentage)*3.6deg)) translateY(calc(50% - $pie-wid/2));
                         }
                     }
@@ -213,9 +303,5 @@ $col-tertiary: #ef50e4;
     .footer {
         width: 100%;
         margin: 0 1rem 1rem 1rem;
-        border-radius: $radius;
-        background: $col-black-opacity;
-        backdrop-filter: blur(1px);
-        border: 1px solid $col-black;
     }
 }
